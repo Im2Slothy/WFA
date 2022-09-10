@@ -47,12 +47,23 @@
 		</div>
 	</div>
 </nav>
-		<div class="col-xs-12 col-md-4">
-			<img class="image" src="img/error.png" width="400" height="400">
-			<br>
-			<h3>In Developement</h3>
-			<p>Check back soon!</p>
-		</div>
+
+<script>
+
+  function updateQuotes(data) {
+   for (ticker in quote) {
+    var symbol = quote[ticker];
+	
+    document.write('<div>Price of ' + ticker + ' : Close -  ' + symbol['Last'] + '</div>');
+	document.write('<div>Price of ' + ticker + ' : Low -  ' + symbol['Low'] + '</div>');
+	document.write('<div>Price of ' + ticker + ' : High -  ' + symbol['High'] + '</div>');
+	document.write('<div>Price of ' + ticker + ' :Open - ' + symbol['Open'] + '</div>');
+	
+   }
+  }
+ </script>
+ 
+<script src="http://feeds.financialcontent.com/JSQuote?Ticker=GOOG+BSE+NSE"></script>
 
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>
